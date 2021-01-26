@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYSQL-Introduction</title>
+    <!-- Bootstrap CDn start -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <!-- bootstrap cdn end -->
+</head>
+
+<body>
+    <!-- NavBar start -->
+
+    <nav class="navbar navbar-dark " style="background-color:blueviolet;color: cornsilk;">
+        <a class="navbar-brand " href="#">MYSQL Topic-Introduction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse text-center" id="navbarsExample01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../index.html" target="_blank">Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="../JAVA/javaLand.html" target="_blank">Java</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Advanced/advLand.html" target="_blank">Advanced JAVA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../MYSQL/mysqlLand.html" target="_blank">MYSQL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/Html.html" target="_blank">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../CSS/cssLand.html" target="_blank">CSS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../javascript/jsLand.html" target="_blank">JAVASCRIPT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../JDBC/jdbcLand.html" target="_blank">JDBC</a>
+                </li>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NavBar End -->
+
+    <!-- notes cards start -->
+    <div class="jumbotron jumbotron-fluid  my-4" style="background-color:blueviolet;color: cornsilk;">
+        <div class="container text-center">
+            <h1 class="display-4">Introduction</h1>
+
+
+
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid my-4 " style="background-color:black;color: #20c20e;">
+        <div class="container  ">
+            <h1 class="text-center">Introduction</h1><br><br>
+            <p>DATA: Data is small volume of facts and figures<br>DATABASE: Database is large volume of facts and figures <br><br>
+                <h3>Types of Data</h3>1.Structured<br>2.Unstructured<br>3.Semi-Structured<br><br>Structured:<br>Structured data is data which have a predefined data model<br> Structured data conforms to a tabular format with the relationship between the different
+                rows and columns.<br><br>Semi-Structured:<br>Semi-structured data is a form of structured data that does not conform with the formal structure of data models<br><br>Unstructured:<br>Unstructured data is information that either does not
+                have a predefined data model or is not organized in a predefined manner.<br><br>
+                <h3> Types of Databases</h3><br>1.Centralized Database<br>2.Distributed Database<br>3.NoSQL Database<br>4.Cloud Database<br>5.Relational Database<br>6.Network Database
+                <br>7.Hierarchical Database<br><br>➢Centralized Database: It is the type of database that stores data at a centralized database system. It comforts the users to access the stored data from different locations through several applications.
+                These applications contain the authentication process to let users access data securely.<br>➢Distributed Database: Unlike a centralized database system, in distributed systems, data is distributed among different database systems of an
+                organization. These database systems are connected via communication links. Such links help the end-users to access the data easily.<br>➢NoSQL Database: Non-SQL/Not Only SQL is a type of database that is used for storing a wide range of
+                data sets. It is not a relational database as it stores data not only in tabular form but in several different ways. It came into existence when the demand for building modern applications increased.<br>➢Cloud Database: Cloud database
+                facilitates you to store, manage, and retrieve their structured, unstructured data via a cloud platform. This data is accessible over the Internet.<br>➢Relational Database: This database is based on the relational data model, which stores
+                data in the form of rows(tuple) and columns(attributes), and together forms a table(relation). Four commonly known properties of a relational model known as ACID properties.<br>➢Network Database:In this model data is organized more like
+                a graph and are allowed to have more than one parent node.<br>➢Hierarchical Database:It is the type of database that stores data in the form of parent-childrenrelationship nodes.<br><br>RDBMS stands for Relational Database Management Systems.<br>Difference
+                between DBMS and RDBMS:
+                <table class="table" style="background-color:black;color: #20c20e;">
+                    <thead>
+                        <tr>
+                            <th scope=" col ">DBMS</th>
+                            <th scope="col ">RDBMS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row ">DBMS stores data as a file</th>
+                            <td>RDBMS stores data in tabular form.</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row ">No relationship between data.</th>
+                            <td>Data is stored in the form of tables which are related to each other.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Normalization is not present.</th>
+                            <td>Normalization is present.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">It deals with a small quantity of data</th>
+                            <td>It deals with a large amount of data</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Data redundancy is common in this model</th>
+                            <td>Keys and indexes do not allow Data redundancy.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Examples: XML, Microsoft Access, etc.</th>
+                            <td>Examples: MySQL, PostgreSQL, SQL Server, Oracle, etc.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>RDBMS Software:</h3>
+                <ul>
+                    <li>Oracle</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>MS SQL</li>
+                    <li>IBM Db2</li>
+                    <li>MariaDB</li>
+
+                </ul>
+                <h3>History of MySQL:</h3>MySQL was founded by David Axmark, Allan Larsson and Michael Monty Widenius<br>Initial release:23 May 1995<br>Stable release:8.0<br><br>
+                <h3>Features of MySQL:</h3>
+                <ul>
+
+                    <li>Easy to use</li>
+                    <li>It is secure</li>
+                    <li>Free to download</li>
+                    <li>Allows roll-back</li>
+                    <li>High Performance</li>
+                    <li>GUI Support</li>
+                    <li>Compatible with many operating systems</li>
+                </ul>
+
+                <h3>Creation of table:</h3>Create table student (<br>Id int,<br>Name varchar(20),<br>Marks int,<br>Grade varchar(5),<br>Contact int);<br><br>
+                <h3>Inserting values into the table:</h3>Insert into student values(1,’Arun’,35,’B’,9245673464);<br>Insert into student(id,name,marks,grade,contact) values (2,’Aruna’,38,’A’,958367826);
+
+            </p>
+
+            <div class="btn-group justify-content-center " role="group " aria-label="Basic example ">
+                <a href="starting.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk;; ">Prev</button></a>
+                <a href="mysqlLand.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk; ">MYSQL Home</button></a>
+                <a href="datatypes.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk; ">Next</button></a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- notes cards end -->
+    <!-- Footer start -->
+    <footer>
+        <div class="jumbotron jumbotron-fluid my-4 " style="background-color:blueviolet;color: cornsilk; ">
+            <div class="container text-center ">
+
+                <p class="lead ">This website was created by JOSHI ESWAR© All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end-->
+
+    <!-- bootStrap js script-start. -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js " integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF " crossorigin="anonymous "></script>
+
+    <!-- bootStrap js  script-end. -->
+</body>
+
+</html>

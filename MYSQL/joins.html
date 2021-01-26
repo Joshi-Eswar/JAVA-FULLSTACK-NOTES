@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYSQL-JOINS</title>
+    <!-- Bootstrap CDn start -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <!-- bootstrap cdn end -->
+</head>
+
+<body>
+    <!-- NavBar start -->
+
+    <nav class="navbar navbar-dark " style="background-color:blueviolet;color: cornsilk;">
+        <a class="navbar-brand " href="#">MYSQL Topic-JOINS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse text-center" id="navbarsExample01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../index.html" target="_blank">Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="../JAVA/javaLand.html" target="_blank">Java</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Advanced/advLand.html" target="_blank">Advanced JAVA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../MYSQL/mysqlLand.html" target="_blank">MYSQL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/Html.html" target="_blank">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../CSS/cssLand.html" target="_blank">CSS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../javascript/jsLand.html" target="_blank">JAVASCRIPT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../JDBC/jdbcLand.html" target="_blank">JDBC</a>
+                </li>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NavBar End -->
+
+    <!-- notes cards start -->
+    <div class="jumbotron jumbotron-fluid  my-4" style="background-color:blueviolet;color: cornsilk;">
+        <div class="container text-center">
+            <h1 class="display-4">JOINS</h1>
+
+
+
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid my-4 " style="background-color:black;color: #20c20e;">
+        <div class="container  ">
+            <h1 class="text-center">JOINS</h1>
+            <ul>
+                <li>It is used to retrieve data from multiple tables.</li>
+                <li>It is performed whenever you need to fetch records from two or more tables.</li>
+                <li>Join clause is used to combine or compare rows from two or more tables, based on related column between them.</li>
+
+            </ul>
+            <p>
+                <h3>Types of Joins:</h3>➢INNERJOIN (SIMPLE JOIN) OR EQUI JOIN<br>➢NATURAL JOIN<br>➢OUTER JOIN
+                <ul>
+                    <li>LEFT OUTER JOIN (LEFT JOIN)</li>
+                    <li>RIGHT OUTER JOIN (RIGHT JOIN)</li>
+                </ul>➢CROSS JOIN/CARTESIAN JOIN<br>➢SELF JOIN<br><br>
+                <h3>INNER JOIN (SIMPLE JOIN) OR EQUI JOIN</h3>
+                The INNER JOIN is used to returntherows from multiple tables where the join condition is satisfied.<br> It is most common type of join.<br>Inner join is applicable only if there is commoncolumn, ifnot then inner join is invalid.<br><br>Syntax
+                of inner join:<br>Select */exp<br>From table1 inner join table2<br>On table1.column=table2.column;<br><br>Syntax of equi join:<br>Select */exp<br>From table1,table2<br>Where table1.column=table2.column;<br><br>
+                <h3>NATURAL JOIN</h3>The tables should not have one or more pairs of identical named columns.<br>NOTE:Do notuse “on” clause in natural join.<br>Syntax:<br>Select *<br>From tab1 natural join tab2;<br><br>
+                <h3>OUTER JOIN</h3>Outer join gives the non-matching records along with matching records.<br><br>
+                <h3> LEFT OUTER JOIN</h3>•The LEFT OUTER JOIN returns all rows from theleft handtable and only those rows from the other table where the join condition is fulfilled.<br>•This will display all matching records and the records which are in left
+                hand side table those that are not in right hand side table.<br><br>Syntax:<br>SELECT*/columns<br>FROM table1 LEFT OUTER JOIN table2 ON table1.column=table2.column;<br><br>
+                <h3> RIGHT OUTER JOIN</h3>•The RIGHT OUTER JOIN returns all rows from right hand table and only those rows the other table where the join condition is fulfilled.<br>•This will display all matching records and the records which are in right
+                hand side table those that are not in left hand side table.<br>Syntax:<br>SELECT*/columns<br>FROM table1 RIGHT OUTER JOIN table2 ON table1.column=table2.column;<br><br>
+                <h3>FULL OUTER JOIN</h3>•This will display all matching records and the non-matching records from both tables.<br>•This is combination of left outer join and right outer join.<br>Syntax:<br>SELECT */columns
+                <br>FROM table1 LEFT OUTER JOIN table2 ON table1.column=table2.column<br>UNION<br>SELECT */columns<br>FROM table1 RIGHT OUTER JOIN table2 ON table1.column=table2.column;<br><br>
+                <h3>CROSS JOIN/CARTESIAN JOIN</h3>•It is cross product of 2 tables.<br>•Works on the principle that each and every record of one table matches with all records of other table.<br>•Cartesian joins results in valid results and also invalid results.(matchindand
+                unmatching)
+                <br>•Always formed without any joining condition.<br><br>Syntax of cross join:<br>SELECT */exp
+                <br>FROM table1 cross join table2;<br><br>Syntax of cartesian join:<br>SELECT */exp <br>FROM table1,table2;<br>The output of Cartesian is in the format of cross product hence name cross join.<br><br><br>
+                <h3>SELF JOIN</h3>•A self-join is a query in which a table is joined (compared) to itself.<br>•Self-joins are used to compare values in a column with other values in the same column in the same table.<br>•At run time the tables will be created
+                with 2 copies<br><br><br> Display the customer name, the item purchased and the amount he paid for each item.[using Equi Join]<br>Solution: SELECT custname,descr,billamount<br>FROM customer c,purchasebil lp, item i<br>where c.custid=p.custid
+                and p.itemcode=i.itemcode;<br><br>[using Natural Join]<br>Solution: SELECT custname,descr,billamount<br>FROM customer c natural join purchasebill p natural join itemi;<br><br> Display all the details of purchases done by customers,and
+                also display all the customer’s details even if they have not done any purchase.<br>Solution: select *<br>from purchasebill p right join customer c <br>on p.custid=c.custid<br><br>Display all the details of employee’s and their working
+                location along with manager id.<br>Solution: select *from empdetails e left join retailoutlet r on r.roid=e.worksin;<br><br>WAQ to display the customer name and the employee name.<br>Solution:select empname,custname<br>from empdetails
+                cross join customer;<br><br>Display all the details of employees and their corresponding retail outlet details and also display the details of employee's either who is not working or a retail outlet which does not have an employee working
+                there.
+                <br>Solution:select *<br>from retailoutlet left outer join empdetails<br> on retailoutlet.roid=empdetails.worksin<br>UNION<br>select *<br>from retailoutlet right outer join empdetails<br>on retailoutlet.roid=empdetails.worksin;<br><br>WAQ
+                to display theempnameandsalary of employees whose salary is greater than what Peter is earning.
+                <br>Solution:select f.empname,f.salary<br>from empdetails e,empdetails f <br>wheref.salary>e.salary and e.empname='Peter';</p>
+
+            <div class="btn-group justify-content-center " role="group " aria-label="Basic example ">
+                <a href="subQueries.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk;; ">Prev</button></a>
+                <a href="mysqlLand.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk; ">MYSQL Home</button></a>
+                <a href="commands.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk; ">Next</button></a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- notes cards end -->
+    <!-- Footer start -->
+    <footer>
+        <div class="jumbotron jumbotron-fluid my-4 " style="background-color:blueviolet;color: cornsilk;">
+            <div class="container text-center ">
+
+                <p class="lead">This website was created by JOSHI ESWAR© All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end-->
+
+    <!-- bootStrap js script-start. -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <!-- bootStrap js  script-end. -->
+</body>
+
+</html>

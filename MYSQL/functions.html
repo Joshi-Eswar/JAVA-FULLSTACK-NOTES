@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYSQL-FUNCTIONS</title>
+    <!-- Bootstrap CDn start -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <!-- bootstrap cdn end -->
+</head>
+
+<body>
+    <!-- NavBar start -->
+
+    <nav class="navbar navbar-dark " style="background-color:blueviolet;color: cornsilk;">
+        <a class="navbar-brand " href="#">MYSQL Topic-FUNCTIONS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse text-center" id="navbarsExample01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../index.html" target="_blank">Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="../JAVA/javaLand.html" target="_blank">Java</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Advanced/advLand.html" target="_blank">Advanced JAVA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../MYSQL/mysqlLand.html" target="_blank">MYSQL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/Html.html" target="_blank">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../CSS/cssLand.html" target="_blank">CSS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../javascript/jsLand.html" target="_blank">JAVASCRIPT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../JDBC/jdbcLand.html" target="_blank">JDBC</a>
+                </li>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NavBar End -->
+
+    <!-- notes cards start -->
+    <div class="jumbotron jumbotron-fluid  my-4" style="background-color:blueviolet;color: cornsilk;">
+        <div class="container text-center">
+            <h1 class="display-4">FUNCTIONS</h1>
+
+
+
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid my-4 " style="background-color:black;color: #20c20e;">
+        <div class="container  ">
+            <h1 class="text-center">FUNCTIONS</h1><br><br>
+            <p>
+                InMySQL, we have two types of functions:<br>1.Single row functions<br>2.Multiple row functions<br><br>
+                <h3>Single row functions</h3>Are such functions which will accept a single row as input (or) it accepts multiple rows as input but produces one result per row.Single row functions have four types:<br>1.String Function<br>2.Date Function<br>3.Number
+                Function
+                <br>4.General Function<br><br>
+                <h3>Multiple row functions/group functions/aggregate function</h3>are such functions which will accept a single row or multiple rows as input but produces one result per group.<br><br><br>
+                <h3>SINGLE ROW FUNCTION</h3><br><br>STRING FUNCTION<br>•Case Manipulation Function<br>•Character Manipulation Function<br>
+                <h3>Case Manipulation Function</h3><br> Upper:Converts a string to upper-case.<br>Syntax: select upper(string)<br>Example: SELECT UPPER ("HiGoodMorning");<br>Output:HI GOODMORNING <br><br>Lower:Converts a string to lowercase<br>.Syntax: select
+                lower(string)
+                <br>Example: SELECT lower ("HI GOODMORNING");<br>Output:higoodmorning<br><br>WAQ to display employee name in uppercase and email id in the lower case from employee details table only if they work as Administrator.<br>Solution:SELECT upper(empname),lower(emailid)
+                <br>from empdetails<br>where designation='Administrator';
+                <br><br>WAQ to display the description of an item in uppercase only if item type is FMCG.<br>Solution:SELECT upper(descr)<br>from item<br>where itemtype='FMCG';<br><br>
+                <h3>Character Manipulation Function</h3>Length<br>Length is used to return the length of the string (in characters).<br>Syntax: select length(string);<br>Example: select length(‘ABC FOR TECHNOLOGY’);<br>Output: 18<br><br>WAQ to display the
+                length of store name from quotation table only if the quotation status is accepted.<br>Solution: select length(sname)<br>from quotation<br>where qstatus='Accepted';<br><br>WAQ to display the email ID and the length of mail id from customer
+                table only if customer type is regular. Sort the result based on the customer id in ascending order.<br>Solution: select emailid,length(emailid)<br>from customer <br>where custtype='Regular'<br>order by custid;<br><br>
+                <h3>Reverse</h3>It is used to reverse the string and returns the result.<br>Syntax: select reverse(string);<br>Example: select reverse('RajaRamRohanRoy');<br>Output:yoRnahoRmaRajaR<br><br>WAQ to display customer name from customer table only
+                if customer name is a palindrome.<br>Solution: select custname<br>from customer<br>where custname=reverse(custname);<br><br>
+                <h3>Concat</h3>It is used to concat two or more strings into a single string <br>Syntax: select concat(expression1, expression2..);
+                <br>Example:select concat('john','jacobs');<br>Output:johnjacobs<br><br>WAQ to display item type and item description while displaying provide an alias name as "ITEM DESCRIPTION."<br>Solution:select concat(itemtype,' ',descr) AS 'ITEM
+                DESCRIPTION'
+                <br>from item;
+                <br><br>
+                <h3>Replace</h3>Replaces all occurrences of a substring within a string, with a new substring.<br>Syntax:<br>select replace(string,search_string,new_string);
+                <br><br>WAQ to display the customer type from Regular to Prime using the customer table.<br>Solution: select replace(custtype,'Regular','Prime')<br>from customer;<br><br>WAQ to display employee name and designation of those employees who
+                works as Administrator.While Displaying replace Administrator to Admin Manager.<br>Solution:select empname,replace(designation,'Administrator','AdminManager')<br>from empdetails<br>where designation= 'Administrator';<br><br>
+                <h3>Substr</h3>Substr function it is used to extract a substring from a string.<br>Syntax: select substr(string,start_position, length)<br>Example: select substr('Hello Good Morning',7,4);<br>Output:Good<br><br>WAQ to display the last three
+                digits of the item code from item table and give alias name as code. Finally, sort the result in descending order.<br>Solution: selectsubstr(itemcode,-3) as code<br>from item<br>order by 1desc;<br><br>WAQ to display the customer name and
+                the first character of the customer name from the customer table while displaying the result, display the name along with the first character.<br>Solution: select concat(custname,' ',substr(custname,1,1))<br>from customer;<br><br>WAQ to
+                display the description of an item in the upper case from item table only if the description starts with a character 'b'.<br>Solution: select upper(descr)<br>from item<br>where substr(descr,1,1)='b';<br><br>
+                <h3>Instr</h3>>Instrfunction returns the position of the first occurrence of a string.<br>Syntax: selectinstr(string, search string);<br>Example: Select instr('sachin','a');<br>Output:2<br><br>WAQ to display the position of character 'a' in
+                customer name from the customer table.<br>Solution: selectinstr(custname,'a')<br>from customer;<br><br>
+                <h3>Trim</h3>Trim function removes the unwanted leading and trailing characters from a string.<br> Example:select trim(trailing 'm' from 'madam');<br>Output:mada<br><br>select trim(leading 'm' from 'madam');<br>Output:adam<br><br>select trim(both
+                'm' from 'madam');Output:ada<br><br><br>
+                <h3>Ltrim</h3>Ltrimfunction is used to remove all leading spaces of a string.<br>Syntax:select ltrim(string);<br>Example:selectltrim('ABC');<br><br>
+                <h3>Rtrim</h3>Rtrim function is used to remove all trailing spaces of a string.<br>Syntax: select rtrim(string);<br>Example:selectrtrim('ABC');<br>
+                <h3>Lpad</h3>Lpad function left-pads a string with another string, to a certain length.<br>Syntax:select lpad(string, length, lpad_string);<br>Example:selectlpad('demo',10,'*');<br>Output:******demo<br><br>
+                <h3>Rpad</h3>Rpad function right-pads a string with another string, to a certain length.<br>Syntax: select rpad(string, length, rpad_string);<br>Example:selectrpad('demo',10,'*');<br>Output:demo******<br><br>WAQ to display employee name and
+                updated contact number by right padding with '#' of 10 character length field and give an alias name "updated contact".<br>Solution: select empname,rpad(contactno,'10','#') as "updated contact"<br>from empdetails;<br><br>
+                <h3>Left</h3>Left function extracts the specified number of characters from a string starting from the left side.<br>Syntax: select LEFT(string, number_of_chars);<br>Example:select left('www.abcfortech.com',3);<br>Output: www<br><br><br>
+                <h3>Right</h3>Right function extracts the specified number of characters from a string starting from the right side. <br>Syntax: select right(string, number_of_chars);<br>Example:select right('www.abcfortech.com',3);<br>Output: com<br><br><br>                WAQ to display the last three digits of an employee id and first three characters of employee name from the employee table and give an alias name asnamecode.<br>Solution:select concat(right(empid,3),left(empname,3)) as Name Code<br>from
+                empdetails;
+                <br><br>
+                <h3>ASCII</h3>ASCII function returns the ASCII value for the specific character.<br>Syntax: select ascii(charater);<br>Example: select ascii('a');
+                <br>Output:97<br><br><br>
+                <h3>Substring_index</h3>This function returns a substring of a string before a specified number of delimiter occurs.<br>Syntax: select SUBSTRING_INDEX(string, delimiter, number);<br>Example: SELECT SUBSTRING_INDEX("www.abcfortech.com", ".",
+                2);
+                <br>Output:www.abcfortech<br><br>
+                <h3>NUMBER FUNCTIONS</h3><br><br>
+                <h3>MOD</h3>>Mod function returns the remainder of a number divided by another number.<br>Syntax: select MOD(x, y);<br><br>Example: select mod(20,2);<br>Output:0<br><br>WAQ to display Only Odd Rows From employee details table.<br>Solution:
+                select *<br>from empdetails<br>where mod(empid,2)=1;
+                <br><br><br>
+                <h3>ROUND</h3>Round function rounds a number to a specified number of decimal places<br>Syntax: select ROUND(number, decimals);<br>Example: select round(3456.23788, 2);<br>Output: 3456.24<br><br><br>WAQ to round off the number 45.326 at 2nd
+                decimal place.<br>Solution: Select round (45.326,2);<br><br>Write the output for the following <br>Round(2678.345,-2)<br>Output: 2700<br><br>
+                <h3>TRUNCATE</h3>>Truncate function truncates a number to the specified number of decimal places.<br>Syntax: select TRUNCATE(number, decimals);<br><br>Example: select truncate(3456.23788,2);<br> Output: 3456.23<br><br><br>WAQ to truncate the
+                number 45.326 to 2nd decimal place.<br>Solution: Select truncate(45.326,2);<br><br><br>Write the output for the following Truncate(2678.345,-2)<br>Output: 2600<br><br><br>
+                <h3>POWER or POW</h3>Power function returns the value of a number raised to the power of another number.<br>Syntax: select POWER(x, y);<br><br>Example: select POWER(2,4);<br><br>Write a query to find the power of 5^2 <br>Solution: select power(5,2);<br><br><br>
+                <h3>SQRT</h3>SQRT function returns the square root of a number.<br>Syntax: select SQRT(number);<br><br>Example: select SQRT(25);<br><br>Write a query to find the square root of 4.<br>Solution: select sqrt(4);<br><br><br>
+                <h3>ABS</h3>>ABS function returns the absolute (positive) value of a number.<br>Syntax: ABS (number);<br>Example: SELECT ABS(-243.5);<br>Output: 243.5<br><br><br>
+                <h3>CEIL</h3>>CEIL function returns a nearest highest integer value.<br>Syntax: select CEIL(number);<br><br>Example: SELECT CEIL(25.75);<br>Output:26<br><br><br>
+                <h3>FLOOR</h3>Floor function returns a nearest lowest integer value.<br>Syntax: select floor(number);<br>Example: SELECT floor(25.75);<br>Output:25<br><br>
+                <h3>DATE AND TIME FUNCTION
+                </h3><br><br>
+                <h3>DATE</h3>Date function extracts the date part from a DateTime expression.<br>Syntax: DATE(expression);<br><br> Example: SELECT DATE('2019-06-13 19:30:10');<br>Output:2019-06-13<br><br>
+                <h3>TIME</h3>Time function extracts the time part from a date/time expression.Syntax: TIME(expression);
+                <br><br>Example: SELECT TIME('2019-06-13 19:30:10');<br>Output: 19:30:10<br><br><br>WAQ to display the system's date.<br>Solution: select sysdate();<br>selectlocaltime()<br>;selectlocaltimestamp();<br>select now();<br>(all the above are
+                valid).
+                <br><br><br>WAQTD current date.<br>Solution:select current_date();<br>selectcurdate();<br>(both are valid).<br><br><br>WAQTD current time.<br>Solution:selectcurrent_time();<br><br><br>WAQ to display the number of months between the dates
+                14-nov-2019 and 14-Feb-2019.<br><br><br>Solution:Select timestampdiff(month,'2019-02-14','2019-11-14');<br><br><br>WAQ in order to add 9 months for the date 14-Feb-2019.<br>Solution: Select date_add('2019-02-14', interval 9 month);<br><br><br>WAQ
+                in order to add 10 days for the date 14-Feb-2019.<br><br>Solution:Selectd ate_add('2019-02-14',interval 10 day);<br><br><br>WAQ in order to subtract 9 months for the date 14-feb-2019 in reverse order.<br>Solution:Select date_sub('19-02-14',
+                interval 9 month);<br>Selectdate_add('19-02-14', interval -9 month);<br>(both are valid).<br><br><br>Display today’s date <br>Solution:select DAY(NOW());<br><br><br>Display today’s monthSolution:select MONTH(NOW());<br><br>Display today’s
+                year
+                <br>Solution:select YEAR(NOW());<br><br>Display today’s dayname <br>Solution:select dayname(now());<br><br><br>
+                <h3>EXTRACT</h3> Extract function is used to extract date, month and year from the given date.<br>SYNTAX: extract(day/month/year from date)<br><br><br>WAQ to obtain all details of orders who have ordered in the month of October.<br>Solution:
+                Select *<br>from orders <br>where extract(month fromorderdate)=10;<br><br>
+                <h3>GENERAL FUNCTIONS</h3><br><br>
+                <h3>Ifnull</h3>Ifnullfunction returns a specified value if the expression is NULL.<br>Syntax: select IFNULL(expression, alt_value);
+                <br><br><br>WAQ to display payment date from the orders table. If the payment date is null, then display the payment date as "not paid".<br><br>Solution: select ifnull(pymtdate, 'not paid')<br>from orders;<br><br><br>
+                <h3>AGGREGATE FUNCTION OR MULTIPLE ROW FUNCTION</h3>Min function is used to return the minimum value from the set of values.<br>Max function is used to return the maximum value from the set of values.<br>Count function is used when you need
+                to count some records of the table.<br>Sum function is used to return the total summed value from the set of values.<br>Avg function is used to return the average value from the set of values.<br><br>WAQ to display totalprice,minimum price,maximum
+                price,average price and also total number of items from item table.<br>Solution: select sum(price),min(price),max(price),avg(price),count(*)<br>from item;<br><br><br> WAQ to display the number of employees having a contact number. Give
+                an alias name as "count of emp with contact_no".<br>Solution: select count(*) "count of emp withcontact_no"<br>from empdetails<br>where contact no is not null;
+            </p>
+
+            <div class="btn-group justify-content-center " role="group " aria-label="Basic example ">
+                <a href="limit.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk;; ">Prev</button></a>
+                <a href="mysqlLand.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk; ">MYSQL Home</button></a>
+                <a href="groupBy.html" target="_blank"><button type="button " class="btn btn-secondary mx-4 my-4 " style="background-color:blueviolet;color: cornsilk; ">Next</button></a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- notes cards end -->
+    <!-- Footer start -->
+    <footer>
+        <div class="jumbotron jumbotron-fluid my-4 " style="background-color:blueviolet;color: cornsilk; ">
+            <div class="container text-center ">
+
+                <p class="lead ">This website was created by JOSHI ESWAR© All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end-->
+
+    <!-- bootStrap js script-start. -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js " integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF " crossorigin="anonymous "></script>
+
+    <!-- bootStrap js  script-end. -->
+</body>
+
+</html>
